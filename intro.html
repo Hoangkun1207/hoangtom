@@ -1709,20 +1709,16 @@ function enterStore(){
     if(leaving)
         return;
 
+    leaving = true;
 
-    leaving =
-        true;
+    // Đánh dấu đã xem intro để index.html không đá ngược về intro
+    sessionStorage.setItem("introDone", "1");
 
-
-    document.body.classList.add(
-        "exit"
-    );
-
+    document.body.classList.add("exit");
 
     setTimeout(
         () => {
-
-           window.location.replace("index.html");
+            window.location.replace("./index.html");
         },
         900
     );
